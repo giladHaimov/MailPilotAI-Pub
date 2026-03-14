@@ -41,6 +41,8 @@ In practical terms, the project currently operates as a prototype intended to va
 
 
 
+# Repository Structure
+
 
 Primary components:
 
@@ -131,4 +133,3 @@ Long-term goal is to evolve MailPilot into a broader AI communication assistant 
 MailPilot AI is currently in early development and undergoing
 testing prior to Chrome Web Store release.
 
-# Repository Structure
