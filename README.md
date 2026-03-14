@@ -1,6 +1,9 @@
 Official repository for the MailPilot AI Chrome Extension.
 
+Contact Email: gilad@atomicmail.io
+
 # MailPilot AI
+
 
 MailPilot AI is an experimental Chrome extension exploring a simple but increasingly important idea: that email, one of the most central communication tools in modern work, should feel less like a backlog of manual labor and more like an intelligent collaborator quietly assisting in the background.
 
@@ -123,5 +126,9 @@ Planned features include:
 Long-term goal is to evolve MailPilot into a broader AI communication assistant platform.
 
 ---
+
+## Project Status
+MailPilot AI is currently in early development and undergoing
+testing prior to Chrome Web Store release.
 
 # Repository Structure
