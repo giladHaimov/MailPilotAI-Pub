@@ -1,0 +1,245 @@
+/* =========================================================
+MAILPILOT POPUP
+========================================================= */
+
+#mp-panel {
+
+  width: 380px;
+  max-width: 380px;
+
+  background: white;
+
+  border-radius: 12px;
+
+  box-shadow:
+    0 2px 6px rgba(0,0,0,0.12),
+    0 6px 18px rgba(0,0,0,0.08);
+
+  margin-top: 8px;
+
+}
+
+.mp-popup {
+
+  width: 380px;
+  font-family: Roboto, Arial, sans-serif;
+  overflow: hidden;
+
+}
+
+/* =========================================================
+HEADER
+========================================================= */
+
+.mp-header {
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 10px 14px;
+
+  border-bottom: 1px solid #e5e7eb;
+
+}
+
+.mp-title {
+  font-weight: 600;
+  font-size: 13.5px;
+  letter-spacing: 0.2px;
+}
+
+.mp-close {
+  font-size: 18px;
+  opacity: 0.6;
+  cursor: pointer;
+}
+
+.mp-close:hover {
+  opacity: 1;
+}
+
+/* =========================================================
+POPUP CONTENT
+========================================================= */
+
+.mp-content {
+  padding: 16px;
+  font-size: 14px;
+  line-height: 1.6;
+  white-space: normal;
+  word-break: normal;
+  color: #111827;
+}
+
+/* =========================================================
+COPY BUTTON
+========================================================= */
+
+.mp-copy{
+
+  margin-top:12px;
+
+  padding:6px 12px;
+
+  font-size:13px;
+
+  border-radius:6px;
+
+  border:1px solid #d1d5db;
+
+  background:white;
+
+  cursor:pointer;
+
+}
+
+.mp-copy:hover{
+
+  background:#f9fafb;
+
+}
+
+/* =========================================================
+UPGRADE PANEL
+========================================================= */
+
+.mp-upgrade{
+ padding:16px;
+}
+
+.mp-upgrade-title{
+ font-weight:600;
+ margin-bottom:6px;
+}
+
+.mp-upgrade-desc{
+ font-size:13px;
+ color:#4b5563;
+ margin-bottom:12px;
+}
+
+.mp-upgrade-btn{
+
+ background:#2563eb;
+
+ color:white;
+
+ border:none;
+
+ padding:8px 14px;
+
+ border-radius:6px;
+
+ cursor:pointer;
+
+ font-size:13px;
+
+}
+
+.mp-upgrade-btn:hover{
+ background:#1d4ed8;
+}
+
+/* =========================================================
+MAILPILOT TOOLBAR BUTTONS (GMAIL STYLE)
+========================================================= */
+
+.mailpilot-btn {
+
+  margin-left: 6px;
+
+  padding: 4px 12px;
+
+  min-height: 28px;
+
+  border-radius: 16px;
+
+  border: 1px solid #dadce0;
+
+  background: #f8f9fa;
+
+  color: #202124;
+
+  font-size: 13px;
+
+  font-family: "Google Sans", Roboto, Arial, sans-serif;
+
+  cursor: pointer;
+
+  transition: background 0.15s ease, transform 0.08s ease;
+
+}
+
+/* hover */
+
+.mailpilot-btn:hover {
+
+  background: #e8eaed;
+
+}
+
+/* click animation */
+
+.mailpilot-btn:active {
+
+  transform: scale(.96);
+
+}
+
+/* =========================================================
+LOADING SPINNER
+========================================================= */
+
+.mailpilot-btn.loading {
+
+  position: relative;
+
+}
+
+/* hide label without moving layout */
+
+.mailpilot-btn.loading span {
+
+  opacity: 0;
+
+}
+
+/* spinner */
+
+.mailpilot-btn.loading::after {
+
+  content: "";
+
+  position: absolute;
+
+  width: 12px;
+  height: 12px;
+
+  border: 2px solid #5f6368;
+  border-top-color: transparent;
+
+  border-radius: 50%;
+
+  animation: mailpilot-spin .7s linear infinite;
+
+  left: 50%;
+  top: 50%;
+
+  transform: translate(-50%, -50%);
+
+}
+
+/* spinner animation */
+
+@keyframes mailpilot-spin {
+
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+
+}

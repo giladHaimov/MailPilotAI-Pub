@@ -1,0 +1,68 @@
+// content.js
+// minimal stable version
+
+let recognition;
+let dictating = false;
+
+function toggleDictation() {
+
+  if (dictating) {
+    recognition.stop();
+    dictating = false;
+    console.log("[VoiceExt] dictation stopped");
+    return;
+  }
+
+  const SpeechAPI =
+    window.SpeechRecognition ||
+    window.webkitSpeechRecognition;
+
+  if (!SpeechAPI) {
+    console.log("[VoiceExt] speech not supported");
+    return;
+  }
+
+  recognition = new SpeechAPI();
+
+  recognition.continuous = true;
+  recognition.lang = "en-US";
+
+  recognition.onresult = (e) => {
+
+    const text = e.results[e.results.length - 1][0].transcript;
+
+    const el = document.activeElement;
+    if (!el) return;
+
+    if (el.tagName === "INPUT" || el.tagName === "TEXTAREA") {
+      el.value += text + " ";
+    }
+
+    if (el.isContentEditable) {
+      document.execCommand("insertText", false, text + " ");
+    }
+
+  };
+
+  recognition.start();
+  dictating = true;
+
+  console.log("[VoiceExt] dictation started");
+}
+
+
+// keyboard shortcut fallback
+
+document.addEventListener("keydown", (e) => {
+
+  const isMac = navigator.platform.toUpperCase().includes("MAC");
+
+  if (
+    (isMac && e.metaKey && e.shiftKey && e.key === "V") ||
+    (!isMac && e.ctrlKey && e.shiftKey && e.key === "V")
+  ) {
+    e.preventDefault();
+    toggleDictation();
+  }
+
+});
